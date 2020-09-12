@@ -27,7 +27,7 @@ class ApiClient {
 interface ApiService {
 
     @GET("search/users")
-    @Headers("Authorization: token 7720d8fec6b7962f7321ae885ef8bdf722107e7e")
+    @Headers("Authorization: token 54a155fc8f72b0f26dc1a05684eca4c5f559133b")
     fun getSearchResult(
         @Query("q") q: String
     ): Call<SearchResponse>

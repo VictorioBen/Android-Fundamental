@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.workspace.githubappconsumer2.activity.activity
+package com.workspace.githubappconsumer2.activity
 
 
 import android.annotation.SuppressLint
@@ -19,9 +19,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.workspace.githubappconsumer2.R
-import com.workspace.githubappconsumer2.activity.adapter.UserAdapter
-import com.workspace.githubappconsumer2.activity.model.UserModel
-import com.workspace.githubappconsumer2.activity.view.SearchViewModel
+import com.workspace.githubappconsumer2.adapter.UserAdapter
+import com.workspace.githubappconsumer2.model.UserModel
+import com.workspace.githubappconsumer2.view.SearchViewModel
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.bottom_sheet_layout.view.*
 import java.util.*

@@ -1,12 +1,12 @@
-package com.workspace.githubappconsumer2.activity.db
+package com.workspace.githubappconsumer2.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.AVATAR
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.USERNAME
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion._ID
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.AVATAR
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.USERNAME
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion._ID
 
 
 internal class  DatabaseHelper(context: Context) :

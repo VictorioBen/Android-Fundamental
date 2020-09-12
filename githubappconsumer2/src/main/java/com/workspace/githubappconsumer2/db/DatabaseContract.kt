@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.db
+package com.workspace.githubappconsumer2.db
 import android.net.Uri
 import android.provider.BaseColumns
 

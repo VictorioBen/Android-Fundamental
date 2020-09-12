@@ -1,6 +1,6 @@
 @file:Suppress("DEPRECATION")
 
-package com.workspace.githubappconsumer2.activity.activity
+package com.workspace.githubappconsumer2.activity
 
 
 import android.app.Activity
@@ -18,15 +18,15 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.google.android.material.snackbar.Snackbar
 import com.workspace.githubappconsumer2.R
-import com.workspace.githubappconsumer2.activity.adapter.UserAdapter
-import com.workspace.githubappconsumer2.activity.adapter.ViewPagerAdapter
-import com.workspace.githubappconsumer2.activity.api.ApiClient
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
-import com.workspace.githubappconsumer2.activity.helper.UserHelper
-import com.workspace.githubappconsumer2.activity.fragment.FollowerFragment
-import com.workspace.githubappconsumer2.activity.fragment.FollowingFragment
-import com.workspace.githubappconsumer2.activity.model.UserModel
+import com.workspace.githubappconsumer2.adapter.UserAdapter
+import com.workspace.githubappconsumer2.adapter.ViewPagerAdapter
+import com.workspace.githubappconsumer2.api.ApiClient
+import com.workspace.githubappconsumer2.db.DatabaseContract
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
+import com.workspace.githubappconsumer2.helper.UserHelper
+import com.workspace.githubappconsumer2.fragment.FollowerFragment
+import com.workspace.githubappconsumer2.fragment.FollowingFragment
+import com.workspace.githubappconsumer2.model.UserModel
 import kotlinx.android.synthetic.main.activity_detail_user.*
 import kotlinx.android.synthetic.main.fragment_follower.*
 import kotlinx.android.synthetic.main.layout_detail_user.*

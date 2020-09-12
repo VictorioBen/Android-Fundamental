@@ -1,4 +1,4 @@
-package com.workspace.githubconsumer2.adapter
+package com.workspace.githubappconsumer2.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.workspace.githubappconsumer2.R
 
-import com.workspace.githubappconsumer2.activity.model.UserModel
+import com.workspace.githubappconsumer2.model.UserModel
 import kotlinx.android.synthetic.main.item_row_favorite.view.*
 
 class UserFavAdapter(private val listUser: MutableList<UserModel>? = mutableListOf(),

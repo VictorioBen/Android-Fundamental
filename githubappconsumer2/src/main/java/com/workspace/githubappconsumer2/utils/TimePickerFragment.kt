@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.utils
+package com.workspace.githubappconsumer2.utils
 
 
 import android.app.Dialog

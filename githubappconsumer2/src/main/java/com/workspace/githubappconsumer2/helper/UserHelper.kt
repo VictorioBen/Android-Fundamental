@@ -1,13 +1,13 @@
-package com.workspace.githubappconsumer2.activity.helper
+package com.workspace.githubappconsumer2.helper
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.USERNAME
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion._ID
-import com.workspace.githubappconsumer2.activity.db.DatabaseHelper
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.USERNAME
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion._ID
+import com.workspace.githubappconsumer2.db.DatabaseHelper
 
 class UserHelper(context: Context) {
     private var databaseHelper: DatabaseHelper = DatabaseHelper(context)

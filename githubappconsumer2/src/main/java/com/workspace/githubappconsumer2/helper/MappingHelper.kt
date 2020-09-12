@@ -1,10 +1,10 @@
-package com.workspace.githubappconsumer2.activity.helper
+package com.workspace.githubappconsumer2.helper
 
 import android.database.Cursor
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.AVATAR
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.USERNAME
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion._ID
-import com.workspace.githubappconsumer2.activity.model.UserModel
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.AVATAR
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.USERNAME
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion._ID
+import com.workspace.githubappconsumer2.model.UserModel
 
 object MappingHelper {
 

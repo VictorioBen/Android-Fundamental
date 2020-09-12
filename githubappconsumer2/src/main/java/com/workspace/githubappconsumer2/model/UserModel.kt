@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.model
+package com.workspace.githubappconsumer2.model
 
 
 import android.os.Parcelable

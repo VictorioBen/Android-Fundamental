@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.activity
+package com.workspace.githubappconsumer2.activity
 
 import android.app.Activity
 import android.content.Intent

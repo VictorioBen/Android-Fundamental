@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <provider
-            android:name=".activity.provider.UserProvider"
+            android:name=".provider.UserProvider"
             android:authorities="com.workspace.githubusertwo"
             android:readPermission="com.workspace.githubusertwo"
             android:writePermission="com.workspace.githubusertwo"
@@ -29,25 +29,25 @@
             android:exported="true" />
 
         <activity
-            android:name=".activity.activity.SettingActivity"
-            android:parentActivityName=".activity.activity.SearchActivity" />
+            android:name=".activity.SettingActivity"
+            android:parentActivityName=".activity.SearchActivity" />
 
         <receiver
-            android:name=".activity.broadcast.AlarmReceiver"
+            android:name=".broadcast.AlarmReceiver"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".activity.activity.AlarmActivity"
-            android:parentActivityName=".activity.activity.SearchActivity" />
+            android:name=".activity.AlarmActivity"
+            android:parentActivityName=".activity.SearchActivity" />
         <activity
-            android:name=".activity.activity.ListFavoriteActivity"
-            android:parentActivityName=".activity.activity.SearchActivity" />
+            android:name=".activity.ListFavoriteActivity"
+            android:parentActivityName=".activity.SearchActivity" />
         <activity
-            android:name=".activity.activity.DetailUserActivity"
-            android:parentActivityName=".activity.activity.SearchActivity" />
+            android:name=".activity.DetailUserActivity"
+            android:parentActivityName=".activity.SearchActivity" />
         <activity
-            android:name=".activity.activity.SearchActivity"
+            android:name=".activity.SearchActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

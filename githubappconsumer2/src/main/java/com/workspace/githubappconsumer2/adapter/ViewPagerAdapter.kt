@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.adapter
+package com.workspace.githubappconsumer2.adapter
 
 
 import android.content.Context
@@ -6,7 +6,7 @@ import androidx.annotation.Nullable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.workspace.githubappconsumer2.activity.model.UserModel
+import com.workspace.githubappconsumer2.model.UserModel
 
 
 class ViewPagerAdapter(fm: FragmentManager,private val context: Context,  private val listUser: MutableList<UserModel>? = mutableListOf()): FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {

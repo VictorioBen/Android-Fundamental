@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.activity
+package com.workspace.githubappconsumer2.activity
 
 import android.content.Intent
 import android.database.ContentObserver
@@ -12,11 +12,11 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.workspace.githubappconsumer2.R
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
-import com.workspace.githubconsumer2.adapter.UserFavAdapter
-import com.workspace.githubappconsumer2.activity.helper.MappingHelper
-import com.workspace.githubappconsumer2.activity.helper.UserHelper
-import com.workspace.githubappconsumer2.activity.model.UserModel
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
+import com.workspace.githubappconsumer2.adapter.UserFavAdapter
+import com.workspace.githubappconsumer2.helper.MappingHelper
+import com.workspace.githubappconsumer2.helper.UserHelper
+import com.workspace.githubappconsumer2.model.UserModel
 import kotlinx.android.synthetic.main.activity_list_favorite.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GithubUserTwo</string>
+    <string name="app_name">GithubAppConsumer2</string>
     <string name="owner">Victorio Ben Yabes</string>
     <string name="location">Pittsburgh, PA, USA</string>
     <string name="company">Google, Inc</string>

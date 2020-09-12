@@ -1,12 +1,12 @@
-package com.workspace.githubappconsumer2.activity.view
+package com.workspace.githubappconsumer2.view
 
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.workspace.githubappconsumer2.activity.api.ApiClient
-import com.workspace.githubappconsumer2.activity.model.SearchResponse
-import com.workspace.githubappconsumer2.activity.model.UserModel
+import com.workspace.githubappconsumer2.api.ApiClient
+import com.workspace.githubappconsumer2.model.SearchResponse
+import com.workspace.githubappconsumer2.model.UserModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

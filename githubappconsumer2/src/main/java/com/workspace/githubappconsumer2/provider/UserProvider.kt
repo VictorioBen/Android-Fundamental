@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.provider
+package com.workspace.githubappconsumer2.provider
 
 import android.content.ContentProvider
 import android.content.ContentValues
@@ -6,10 +6,10 @@ import android.content.Context
 import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.Companion.AUTHORITY
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
-import com.workspace.githubappconsumer2.activity.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
-import com.workspace.githubappconsumer2.activity.helper.UserHelper
+import com.workspace.githubappconsumer2.db.DatabaseContract.Companion.AUTHORITY
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
+import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
+import com.workspace.githubappconsumer2.helper.UserHelper
 
 class UserProvider : ContentProvider() {
     private lateinit var helper: UserHelper

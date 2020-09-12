@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.broadcast
+package com.workspace.githubappconsumer2.broadcast
 
 import android.app.AlarmManager
 import android.app.NotificationChannel
@@ -13,7 +13,7 @@ import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import com.workspace.githubappconsumer2.R
-import com.workspace.githubappconsumer2.activity.activity.SearchActivity
+import com.workspace.githubappconsumer2.activity.SearchActivity
 import java.util.*
 
 class AlarmReceiver : BroadcastReceiver() {

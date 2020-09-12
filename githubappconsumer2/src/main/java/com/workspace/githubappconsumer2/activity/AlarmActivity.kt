@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.activity.activity
+package com.workspace.githubappconsumer2.activity
 
 
 import android.content.SharedPreferences
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.workspace.githubappconsumer2.R
-import com.workspace.githubappconsumer2.activity.broadcast.AlarmReceiver
-import com.workspace.githubappconsumer2.activity.utils.TimePickerFragment
+import com.workspace.githubappconsumer2.broadcast.AlarmReceiver
+import com.workspace.githubappconsumer2.utils.TimePickerFragment
 import kotlinx.android.synthetic.main.activity_alarm.*
 import java.text.SimpleDateFormat
 import java.util.*
