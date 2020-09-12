@@ -1,0 +1,39 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="view_cross">
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">#717171</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+       <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.DarkActionBar">
+        <item name="windowActionBar">true</item>
+        <item name="backgroundColor">@color/ExpertDark_Blue</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="@android:style/Theme.Material.Dialog">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:headerDividersEnabled">true</item>
+        <item name="android:background">@color/White_monotone</item>
+    </style>
+
+    <dimen name="font_15">15sp</dimen>
+    <dimen name="font_24">23sp</dimen>
+    <dimen name="dimen_0">0dp</dimen>
+    <dimen name="dimen_16">16dp</dimen>
+    <dimen name="dimen_32">32dp</dimen>
+    <dimen name="dimen_60">60dp</dimen>
+
+</resources>

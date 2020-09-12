@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="30dp">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Dark_Blue"
+        android:gravity="center"
+        android:text="@string/setting"
+        android:textColor="@color/White"
+        android:textSize="@dimen/font_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/btnFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_oval"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/fav"
+            android:src="@drawable/heart" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/favorite"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_15"
+        app:layout_constraintEnd_toEndOf="@+id/btnFav"
+        app:layout_constraintStart_toStartOf="@+id/btnFav"
+        app:layout_constraintTop_toBottomOf="@+id/btnFav" />
+
+
+    <LinearLayout
+        android:id="@+id/btnLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_oval"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/btnAlarm"
+        app:layout_constraintStart_toEndOf="@+id/btnFav"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/fav"
+            android:src="@drawable/ic_translate" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/language_change"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_15"
+        app:layout_constraintEnd_toEndOf="@+id/btnLanguage"
+        app:layout_constraintStart_toStartOf="@+id/btnLanguage"
+        app:layout_constraintTop_toBottomOf="@+id/btnLanguage" />
+
+    <LinearLayout
+        android:id="@+id/btnAlarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_oval"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/fav"
+            android:src="@drawable/ic_alarm" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/alarm"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_15"
+        app:layout_constraintEnd_toEndOf="@+id/btnAlarm"
+        app:layout_constraintStart_toStartOf="@+id/btnAlarm"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlarm" />
+
+    <LinearLayout
+        android:id="@+id/btnExit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_oval"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLanguage">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/fav"
+            android:src="@drawable/ic_exit" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/font_15"
+        app:layout_constraintEnd_toEndOf="@+id/btnExit"
+        app:layout_constraintStart_toStartOf="@+id/btnExit"
+        app:layout_constraintTop_toBottomOf="@+id/btnExit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

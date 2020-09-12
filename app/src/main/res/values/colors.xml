@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0E3256</color>
+    <color name="colorPrimaryDark">#0E3256</color>
+    <color name="colorAccent">#0E3256</color>
+
+
+    <!-- Kustom Warna Merah-->
+    <color name="Pink">#FFA8A8</color>
+    <color name="Red">#FF2626</color>
+    <color name="RedDark">#7A1F1F</color>
+    <color name="Maroon">#FD442B</color>
+    <color name="gradient_start_color">#FF4C4C</color>
+    <!-- Kustom Warna Abu-Abu-->
+    <color name="AbuMuda">#EDEDED</color>
+    <color name="Abu">#BCBCBC</color>
+    <color name="AbuDark">#605E5E</color>
+
+    <!-- Kustom Warna Kuning-->
+    <color name="KuningMuda">#FFED8D</color>
+    <color name="Kuning">#F1E846</color>
+    <color name="KuningDark">#C8A700</color>
+
+    <!--BackgroundColour-->
+    <color name="Background1">#E6E6DD</color>
+    <color name="Background2">#EDEBEB</color>
+    <color name="White">#FFFFFF</color>
+    <color name="White_monotone">#CADBEB</color>
+
+
+    <!--TextWelcomeColour-->
+    <color name="welcome_register">#de0000</color>
+
+    <!-- Custom Color Orange -->
+    <color name="Orange">#F7931F</color>
+    <color name="Orange_Retro">#F07425</color>
+    <color name="orange_natural">#FF4800</color>
+
+    <!-- Custom Color Green -->
+    <color name="Green">#05AF68</color>
+    <color name="Green_Dark">#2D5C2D</color>
+    <color name="Green_monotone">#00AC66</color>
+    <color name="Green_natural">#00DC02</color>
+
+    <!-- Custom Color Blue -->
+    <color name="gradient_end_color">#18a3fe</color>
+    <color name="Dark_Blue">#15406A</color>
+    <color name="ExpertDark_Blue">#0E3256</color>
+</resources>

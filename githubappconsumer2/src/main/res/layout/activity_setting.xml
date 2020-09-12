@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.SettingActivity">
+
+    <LinearLayout
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:id="@+id/settingFav"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:src="@drawable/heart"
+            android:contentDescription="@string/fav" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_forward"
+            android:text="@string/favorite"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_24" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:id="@+id/settingLanguage"
+        android:elevation="5dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingFav"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:contentDescription="@string/language_change"
+            android:src="@drawable/ic_translate" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_forward"
+            android:gravity="center_vertical"
+            android:text="@string/language_change"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_24" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/White"
+        android:orientation="horizontal"
+        android:id="@+id/settingAlarm"
+        android:layout_marginTop="1dp"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingLanguage"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:contentDescription="@string/language_change"
+            android:src="@drawable/ic_alarm" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_forward"
+            android:gravity="center_vertical"
+            android:text="@string/alarm"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/font_24" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/settingExit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingAlarm">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/exit"
+            android:textColor="@color/Red"
+            android:textSize="26sp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/githubVersion"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/AbuDark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
