@@ -1,8 +1,11 @@
 package com.workspace.githubusertwo.activity
 
 import android.content.Intent
+import android.database.ContentObserver
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.workspace.githubusertwo.R
 import com.workspace.githubusertwo.adapter.UserFavAdapter
+import com.workspace.githubusertwo.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
 import com.workspace.githubusertwo.helper.MappingHelper
 import com.workspace.githubusertwo.helper.UserHelper
 import com.workspace.githubusertwo.model.UserModel
@@ -32,7 +36,10 @@ class ListFavoriteActivity : AppCompatActivity() {
         helper = UserHelper.getInstance(applicationContext)
         helper.open()
         recyclerFavorite()
+        initThreadObserver()
         getListFavorite()
+
+
 
     }
 
@@ -80,11 +87,12 @@ class ListFavoriteActivity : AppCompatActivity() {
         }
     }
 
+
     private fun getListFavorite(){
          GlobalScope.launch(Dispatchers.Main){
              barFav.visibility = View.VISIBLE
-             val deferred = async(Dispatchers.IO){
-                 val cursor = helper.queryAll()
+             val deferred = async(Dispatchers.IO) {
+                 val cursor = contentResolver?.query(CONTENT_URI, null, null, null, null)
                  MappingHelper.mapCursorToArrayList(cursor)
              }
              barFav.visibility = View.INVISIBLE
@@ -95,6 +103,21 @@ class ListFavoriteActivity : AppCompatActivity() {
              addUsersToAdapter(user)
 
          }
+    }
+
+    private fun initThreadObserver(){
+        val handlerThread = HandlerThread("DataObserver")
+        handlerThread.start()
+        val handler = Handler(handlerThread.looper)
+
+        val myObserver = object : ContentObserver(handler) {
+            override fun onChange(selfChange: Boolean) {
+                getListFavorite()
+            }
+        }
+        contentResolver.registerContentObserver(CONTENT_URI, true, myObserver)
+
+
     }
 
 

@@ -1,4 +1,4 @@
-package com.workspace.githubappconsumer2.provider
+package com.workspace.githubusertwo.provider
 
 import android.content.ContentProvider
 import android.content.ContentValues
@@ -6,10 +6,10 @@ import android.content.Context
 import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
-import com.workspace.githubappconsumer2.db.DatabaseContract.Companion.AUTHORITY
-import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
-import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
-import com.workspace.githubappconsumer2.helper.UserHelper
+import com.workspace.githubusertwo.db.DatabaseContract.Companion.AUTHORITY
+import com.workspace.githubusertwo.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
+import com.workspace.githubusertwo.db.DatabaseContract.UserColumns.Companion.TABLE_NAME
+import com.workspace.githubusertwo.helper.UserHelper
 
 class UserProvider : ContentProvider() {
     private lateinit var helper: UserHelper
@@ -17,7 +17,7 @@ class UserProvider : ContentProvider() {
 
     companion object {
         private const val USER = 1
-        private const val USER_NAME = 3
+        private const val USER_NAME = 2
         private val sUriMatcher = UriMatcher(UriMatcher.NO_MATCH)
 
         init {
@@ -30,9 +30,9 @@ class UserProvider : ContentProvider() {
         }
     }
 
-        override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
+    override fun delete(uri: Uri, selection: String?, selectionArgs: Array<String>?): Int {
         val deleted: Int = when (USER_NAME) {
-            sUriMatcher.match(uri) -> helper.deleteByUsername(uri.lastPathSegment.toString())
+            sUriMatcher.match(uri) -> helper.deleteByUsername(selection)
             else -> 0
         }
         context?.contentResolver?.notifyChange(CONTENT_URI, null)
@@ -65,7 +65,7 @@ class UserProvider : ContentProvider() {
         val cursor: Cursor?
         when (sUriMatcher.match(uri)) {
             USER -> cursor = helper.queryAll()
-            USER_NAME -> cursor = helper.queryById(uri.lastPathSegment.toString())
+            USER_NAME -> cursor = helper.queryByUsername(uri.lastPathSegment.toString())
             else -> cursor = null
         }
         return cursor

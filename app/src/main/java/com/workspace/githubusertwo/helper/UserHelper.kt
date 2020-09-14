@@ -58,7 +58,9 @@ class UserHelper(context: Context) {
         return database.insert(DATABASE_TABLE, null, values)
     }
 
-
+    fun deleteById(id: String): Int {
+        return database.delete(DATABASE_TABLE, "$_ID = '$id'", null)
+    }
 
     fun deleteByUsername(username: String?) : Int {
         return database.delete(DATABASE_TABLE, "$USERNAME = '$username'", null)

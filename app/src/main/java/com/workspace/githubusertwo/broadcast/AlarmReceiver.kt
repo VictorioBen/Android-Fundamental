@@ -20,7 +20,7 @@ class AlarmReceiver : BroadcastReceiver() {
 
     companion object {
         const val EXTRA_TYPE = "type"
-         const val ID_REPEATING = 101
+        const val ID_REPEATING = 101
         val VIBRATE = longArrayOf(1000, 1000, 1000, 1000, 1000)
 
         //API 28 (Oreo)
@@ -64,13 +64,12 @@ class AlarmReceiver : BroadcastReceiver() {
             .setVibrate(longArrayOf(1000, 1000, 1000, 1000, 1000))
             .setSound(alarmSound)
 
-            oreoNotification(CHANNEL_ID, CHANNEL_NAME, builder, notificationManagerCompat)
+        oreoNotification(CHANNEL_ID, CHANNEL_NAME, builder, notificationManagerCompat)
 
         val notification = builder.build()
         notificationManagerCompat.notify(notifId, notification)
 
     }
-
 
 
     private fun oreoNotification(
@@ -95,19 +94,18 @@ class AlarmReceiver : BroadcastReceiver() {
     }
 
 
-
     fun setRepeatingAlarm(context: Context, time: String, notifId: Int) {
+
+        val timeArray = time.split(":").toTypedArray()
+        val calendar = Calendar.getInstance()
+        calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]))
+        calendar.set(Calendar.MINUTE, Integer.parseInt(timeArray[1]))
+        calendar.set(Calendar.SECOND, 0)
 
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, AlarmReceiver::class.java)
         intent.putExtra(EXTRA_TYPE, notifId)
 
-        val timeArray = time.split(":").toTypedArray()
-
-        val calendar = Calendar.getInstance()
-        calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(timeArray[0]))
-        calendar.set(Calendar.MINUTE, Integer.parseInt(timeArray[1]))
-        calendar.set(Calendar.SECOND, 0)
 
         val pendingIntent = PendingIntent.getBroadcast(context, ID_REPEATING, intent, 0)
         alarmManager.setInexactRepeating(
@@ -130,10 +128,6 @@ class AlarmReceiver : BroadcastReceiver() {
         alarmManager.cancel(pendingIntent)
         Toast.makeText(context, "Turn Off", Toast.LENGTH_SHORT).show()
     }
-
-
-
-
 
 
 }

@@ -22,6 +22,7 @@ import com.workspace.githubusertwo.adapter.UserAdapter
 import com.workspace.githubusertwo.adapter.ViewPagerAdapter
 import com.workspace.githubusertwo.api.ApiClient
 import com.workspace.githubusertwo.db.DatabaseContract
+import com.workspace.githubusertwo.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
 import com.workspace.githubusertwo.helper.UserHelper
 import com.workspace.githubusertwo.fragment.FollowerFragment
 import com.workspace.githubusertwo.fragment.FollowingFragment
@@ -152,28 +153,18 @@ class DetailUserActivity : AppCompatActivity() {
     private fun addFavorite(user: UserModel?) {
         val sql = helper.queryByUsername(user?.userName)
         if (sql.count > 0) {
-            showSnackbarMessage("Already exists")
+            showSnackbarMessage()
         } else {
             val values = ContentValues()
             values.put(DatabaseContract.UserColumns.USERNAME, user?.userName)
             values.put(DatabaseContract.UserColumns.AVATAR, user?.imageUrl)
 
-            val result = helper.insert(values)
-            showResult(result)
+            contentResolver.insert(CONTENT_URI, values)
             detailFav.visibility = View.VISIBLE
         }
     }
 
-    private fun showResult(result: Long) {
-        when {
-            result > 0 -> {
-                showSnackbarMessage("Save to Favorite !")
-            }
-            else -> {
-                showSnackbarMessage("Failed to Favorite !")
-            }
-        }
-    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         val inflater = menuInflater
@@ -192,8 +183,8 @@ class DetailUserActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSnackbarMessage(message: String) {
-        Snackbar.make(rvFollower, message, Snackbar.LENGTH_SHORT).show()
+    private fun showSnackbarMessage() {
+        Snackbar.make(rvFollower, "Already Exists", Snackbar.LENGTH_SHORT).show()
     }
 
     private fun setLanguage(Lang: String) {

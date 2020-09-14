@@ -29,16 +29,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageFav"
         app:layout_constraintTop_toTopOf="@+id/imageFav" />
 
-    <ImageView
-        android:id="@+id/deleteFav"
-        android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="5dp"
-        android:src="@drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/delete" />
+
 
     <View
         android:id="@+id/view"

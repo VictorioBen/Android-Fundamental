@@ -7,7 +7,6 @@ import android.app.Activity
 import android.content.ContentValues
 import android.content.Intent
 import android.content.res.Configuration
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,19 +15,16 @@ import android.view.MenuItem
 import android.view.View
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.google.android.material.snackbar.Snackbar
 import com.workspace.githubappconsumer2.R
 import com.workspace.githubappconsumer2.adapter.UserAdapter
 import com.workspace.githubappconsumer2.adapter.ViewPagerAdapter
 import com.workspace.githubappconsumer2.api.ApiClient
 import com.workspace.githubappconsumer2.db.DatabaseContract
 import com.workspace.githubappconsumer2.db.DatabaseContract.UserColumns.Companion.CONTENT_URI
-import com.workspace.githubappconsumer2.helper.UserHelper
 import com.workspace.githubappconsumer2.fragment.FollowerFragment
 import com.workspace.githubappconsumer2.fragment.FollowingFragment
 import com.workspace.githubappconsumer2.model.UserModel
 import kotlinx.android.synthetic.main.activity_detail_user.*
-import kotlinx.android.synthetic.main.fragment_follower.*
 import kotlinx.android.synthetic.main.layout_detail_user.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -38,10 +34,10 @@ import java.util.*
 
 class DetailUserActivity : AppCompatActivity() {
     private lateinit var pagerAdapter: ViewPagerAdapter
-    private lateinit var helper: UserHelper
     private lateinit var userAdapter: UserAdapter
-    private lateinit var uriWithId: Uri
+
     private val langKey: String = "settings"
+
     companion object {
         const val EXTRA_NAME = "name"
         private val TAG = SearchActivity::class.java.simpleName
@@ -52,8 +48,6 @@ class DetailUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_user)
         title = getString(R.string.detail)
-        helper = UserHelper.getInstance(applicationContext)
-        helper.open()
         loadLocate()
         userAdapter = UserAdapter()
         val userModel = intent.getParcelableExtra<UserModel>(EXTRA_NAME)
@@ -64,7 +58,6 @@ class DetailUserActivity : AppCompatActivity() {
         getDetailUser(userID)
         getFollowers(userID)
         getFollowing(userID)
-
         fabAdd.setOnClickListener {
             addFavorite(userModel)
 
@@ -91,17 +84,15 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
     private fun initDetailUser(user: UserModel?) {
-        val sql = helper.queryByUsername(user?.userName)
-        if (sql.count > 0) {
-            detailFav.visibility = View.VISIBLE
-        }
         userID.text = user?.userName
         nameDetail.text = user?.name
         valueFollowing.text = user?.totalFollowing.toString()
         valueFollower.text = user?.totalFollower.toString()
         valueRepo.text = user?.repository
         Glide.with(this).load(user?.imageUrl).transform(RoundedCorners(64)).into(imageDetail)
+
     }
+
 
 
     private fun getFollowers(user: String) {
@@ -152,20 +143,13 @@ class DetailUserActivity : AppCompatActivity() {
 
 
     private fun addFavorite(user: UserModel?) {
-        val sql = helper.queryByUsername(user?.userName)
-        if (sql.count > 0) {
-            showSnackbarMessage("Already exists")
-        } else {
-            val values = ContentValues()
-            values.put(DatabaseContract.UserColumns.USERNAME, user?.userName)
-            values.put(DatabaseContract.UserColumns.AVATAR, user?.imageUrl)
+        val values = ContentValues()
+        values.put(DatabaseContract.UserColumns.USERNAME, user?.userName)
+        values.put(DatabaseContract.UserColumns.AVATAR, user?.imageUrl)
+        contentResolver.insert(CONTENT_URI, values)
+        detailFav.visibility = View.VISIBLE
 
-             contentResolver.insert(CONTENT_URI, values)
-            detailFav.visibility = View.VISIBLE
-        }
     }
-
-
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -185,9 +169,7 @@ class DetailUserActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSnackbarMessage(message: String) {
-        Snackbar.make(rvFollower, message, Snackbar.LENGTH_SHORT).show()
-    }
+
 
     private fun setLanguage(Lang: String) {
         val locale = Locale(Lang)
@@ -204,10 +186,7 @@ class DetailUserActivity : AppCompatActivity() {
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
-        helper.close()
-    }
+
 
 
 }

@@ -13,7 +13,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/githubappconsumer" />
             <option value="$PROJECT_DIR$/githubappconsumer2" />
           </set>
         </option>

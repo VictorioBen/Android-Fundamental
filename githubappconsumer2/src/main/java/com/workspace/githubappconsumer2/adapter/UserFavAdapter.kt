@@ -64,12 +64,7 @@ class UserFavAdapter(private val listUser: MutableList<UserModel>? = mutableList
         }
     }
 
-    fun removeAt(position: Int){
-        this.listUser?.removeAt(position)
-        notifyItemRemoved(position)
-        notifyItemRangeRemoved(position, this.listUser?.size ?:0)
-        notifyDataSetChanged()
-    }
+
 
 
 

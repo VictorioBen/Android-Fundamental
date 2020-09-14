@@ -20,6 +20,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
+        <provider
+            android:name=".provider.UserProvider"
+            android:authorities="com.workspace.githubusertwo"
+            android:enabled="true"
+            android:exported="true"
+            android:readPermission="com.workspace.githubusertwo.READ_DATABASE"
+            android:writePermission="com.workspace.githubusertwo.WRITE_DATABASE" />
+
         <activity
             android:name=".activity.SettingActivity"
             android:parentActivityName=".activity.SearchActivity" />
@@ -40,7 +50,9 @@
             android:parentActivityName=".activity.SearchActivity" />
         <activity
             android:name=".activity.SearchActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"/>
+            <activity android:name=".utils.SplashScreen"
+                android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
