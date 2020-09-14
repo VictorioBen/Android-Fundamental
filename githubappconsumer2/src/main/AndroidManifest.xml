@@ -41,7 +41,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".utils.SplashScreen"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
