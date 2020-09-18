@@ -6,10 +6,10 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
-    <permission
+    <uses-permission
         android:name="com.workspace.githubusertwo.READ_DATABASE"
         android:protectionLevel="normal" />
-    <permission
+    <uses-permission
         android:name="com.workspace.githubusertwo.WRITE_DATABASE"
         android:protectionLevel="normal" />
 
@@ -53,7 +53,7 @@
             android:theme="@style/AppTheme.NoActionBar"/>
             <activity android:name=".utils.SplashScreen"
                 android:theme="@style/AppTheme.NoActionBar"
-                android:noHistory="true">
+                >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
