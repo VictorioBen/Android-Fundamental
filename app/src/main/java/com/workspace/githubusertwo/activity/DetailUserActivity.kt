@@ -111,7 +111,7 @@ class DetailUserActivity : AppCompatActivity() {
             ) {
                 if (response.isSuccessful) {
                     pagerAdapter.addFragment(
-                        FollowerFragment.newInstance(user), resources.getString(
+                            FollowerFragment.newInstance(user), resources.getString(
                             R.string.follower
                         )
                     )

@@ -16,6 +16,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.workspace.githubusertwo.R
@@ -44,14 +45,16 @@ class SearchActivity : AppCompatActivity() {
             ViewModelProvider.NewInstanceFactory()
         ).get(SearchViewModel::class.java)
 
-        searchView.listResult.observe(this, { list: List<UserModel> ->
-            adapter.addAll(list)
+        searchView.listResult.observe(this, androidx.lifecycle.Observer {
+            adapter.addAll(it)
             showImage(false)
             loading(false)
-            if (list.isEmpty()){
+            if (it.isEmpty()){
                 showImage(true)
             }
         })
+
+
 
         search()
 
